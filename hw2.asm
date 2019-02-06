@@ -1,10 +1,10 @@
 ;===================================
 
-null        equ			0x00
+null        		equ			0x00
 sys_exit		equ			1
 sys_read		equ			3
 sys_write		equ			4
-stdin			  equ			0
+stdin			equ			0
 stdout			equ			1
 
 ;============================================
@@ -46,17 +46,17 @@ stdout			equ			1
 
 
 section .data
-var1					    db		0xff
-var2					    db		0xff
-nextline				  db		0x0a, 0x0d
+var1			db		0xff
+var2			db		0xff
+nextline		db		0x0a, 0x0d
 msg_is_greater:		db		' is greater than ', null
-msg_is_less				db		' is less than ', null
-msg_is_equal			db		' is equal to ', null
+msg_is_less		db		' is less than ', null
+msg_is_equal		db		' is equal to ', null
 
-msg_prompt1				db		'Please enter a digit: '
-len1					    equ		$ - msg_prompt1
-msg_prompt2				db		'Please enter a second digit: '
-len2					    equ		$ - msg_prompt2
+msg_prompt1		db		'Please enter a digit: '
+len1			equ		$ - msg_prompt1
+msg_prompt2		db		'Please enter a second digit: '
+len2			equ		$ - msg_prompt2
 
 section .text
 		GLOBAL _start

@@ -1,4 +1,26 @@
-;===================================
+;=====================================================
+;=====================================================
+;; Example of when  variable1 > variable2
+;; Please enter a digit: 2
+
+;; Please enter a second digit: 1
+
+;; 2 is greater than 1
+ 
+;; Example of when  variable1 == variable2
+;; Please enter a digit: 1
+
+;; Please enter a second digit: 1
+;; 1 is equal to 1
+
+;; Example of when  variable1 < variable2
+;; Please enter a digit: 1
+
+;; Please enter a second digit: 2
+
+;; 1 is less than 2
+;=====================================================
+;=====================================================
 
 null        		equ			0x00
 sys_exit		equ			1

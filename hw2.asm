@@ -33,7 +33,7 @@ stdout			equ			1
 ;=== MACRO DEFINITIONS
 ;============================================
 
-%macro print_char	1
+%macro print_char 1
 		mov eax, sys_write
 		mov ebx, stdout
 		mov ecx, %1
@@ -117,21 +117,21 @@ section .text
 			je	var1_eq_var2
 			
 			cmp	al, byte [var2]
-			jl var1_less_var2
+			jl 	var1_less_var2
 			
-			mov edi, msg_is_greater
-			call print_string
-			jmp end_main
+			mov 	edi, msg_is_greater
+			call 	print_string
+			jmp 	end_main
 			
 		var1_less_var2:
-			mov edi, msg_is_less
-			call print_string
-			jmp end_main
+			mov 	edi, msg_is_less
+			call 	print_string
+			jmp 	end_main
 
 		var1_eq_var2:
-			mov edi, msg_is_equal
-			call print_string
-			jmp end_main
+			mov 	edi, msg_is_equal
+			call 	print_string
+			jmp 	end_main
 			
 		end_main:
 			print_char var2			; print second integer

@@ -67,10 +67,10 @@ int main(int argc, char ** argv) {
 	else if ( argCounter < 3 )
 		cout << "Please enter more than 3 numerical arguments." << endl;
 
-  else if ( argCounter > 10 )
+	else if ( argCounter > 10 )
 		cout << "Please enter less than 10 numerical arguments." << endl;
-
-  else if ( argsInRange(argv, argc, LOW,HIGH) ) {
+	
+	else if ( argsInRange(argv, argc, LOW,HIGH) ) {
 		showArgs (argv, argc);
 		cout << "Sum is " << getSum(argv, argc) << endl;
 		cout << "The average is " << ( getSum(argv, argc) + 0.0) / argCounter << endl;

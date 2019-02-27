@@ -1,5 +1,8 @@
 /*
-Create a C++ program which will receive numerical values through the command 
+Author: Anton Carrillo
+Description: CECS 326 Argument Lab Assignment
+
+Create a C++ program which will receive numerical values through the command
 line and perform some computations.  Your program will operate with the following
 restrictions:
 program will accept between 3 and 10 numerical command line arguments
@@ -36,6 +39,7 @@ numbersArray[ 6 ] = 7
 The sum is 28
 The average is 4.0
 The range is 6
+
 */
 
 #include <iostream>

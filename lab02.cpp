@@ -1,12 +1,13 @@
 /*
-
-Create a C++ program which will receive numerical values through the command line and perform some computations.  Your program will operate with the following restrictions:
+Create a C++ program which will receive numerical values through the command 
+line and perform some computations.  Your program will operate with the following
+restrictions:
 program will accept between 3 and 10 numerical command line arguments
 NOTE:  checking if an argument is actually a decimal quantity isn't needed
 the argument values must be between -100 and +100
 restriction 1 or 2 is violated then output an error message and terminate the program
-The program you create will
-Output a list of numbers received as a command line arguments
+The program you create will Output a list of numbers received as a command line arguments
+
 Calculate the following:
 Arithmetic sum of the command line argument number values
 Arithmetic average of the command line argument number values
@@ -35,7 +36,6 @@ numbersArray[ 6 ] = 7
 The sum is 28
 The average is 4.0
 The range is 6
-
 */
 
 #include <iostream>
@@ -52,6 +52,7 @@ int getMinValue (char ** , int);
 const int LOW = -100;
 const int HIGH = 100;
 
+// ===== MAIN ====================================================
 int main(int argc, char ** argv) {
 
 	int argCounter = argc - 1;
@@ -61,7 +62,7 @@ int main(int argc, char ** argv) {
 
 	else if ( argCounter < 3 )
 		cout << "Please enter more than 3 numerical arguments." << endl;
-    
+
   else if ( argCounter > 10 )
 		cout << "Please enter less than 10 numerical arguments." << endl;
 
@@ -71,28 +72,33 @@ int main(int argc, char ** argv) {
 		cout << "The average is " << ( getSum(argv, argc) + 0.0) / argCounter << endl;
 		cout << "The range is " << getMaxValue(argv, argc) - getMinValue(argv, argc) << endl;
 	}
-  
+
 	else
 		cout << "Arguments are out of range. Range is [-100, 100]. Bye" << endl;
 
 	return 0;
 }
+// ==================================================================
 
-//
+// ===== argsInRange ================================================
+// ==================================================================
 bool argsInRange(char ** argv, int argc, int low, int high) {
 	for (int i = 1; i < argc; i++ ) {
-		if ( atoi( argv[ i ]) < low || atoi( argv[ i ]) > high)
+		if ( atoi( argv[ i ]) < low || atoi( argv[ i ]) > high )
 			return false;
 	}
+	return true;
 }
 
-//
+// ===== showArgs ===================================================
+// ==================================================================
 void showArgs (char ** argv, int argc) {
 	for ( int i = 1; i < argc; i++ )
 		cout << "numbersArray[ " << i - 1 << " ] = " << argv[ i ] << endl;
 }
 
-//
+// ===== getSum =====================================================
+// ==================================================================
 int getSum (char ** argv, int argc) {
 	int sum  = 0;
 	for( int i = 1; i < argc; i++ )
@@ -100,6 +106,8 @@ int getSum (char ** argv, int argc) {
 	return sum;
 }
 
+// ===== getMaxValue ================================================
+// ==================================================================
 int getMaxValue (char ** argv, int argc) {
 	int maxValue  = -100;
 	for( int i = 1; i < argc; i++ ) {
@@ -109,6 +117,8 @@ int getMaxValue (char ** argv, int argc) {
 	return maxValue;
 }
 
+// ===== getMinValue ================================================
+// ==================================================================
 int getMinValue (char ** argv, int argc) {
 	int minValue  = 100;
 	for( int i = 1; i < argc; i++ ) {
@@ -117,5 +127,3 @@ int getMinValue (char ** argv, int argc) {
 	}
 	return minValue;
 }
-
-//
